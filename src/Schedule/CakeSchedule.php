@@ -15,7 +15,7 @@ class CakeSchedule extends Schedule
 {
     public function shell($command)
     {
-        return $this->run(Configure::read('CakeScheduler.phpBinary') . ' ' . ROOT . DS . 'bin' . DS . 'cake ' . $command);
+        return $this->run(Configure::read('CakeScheduler.phpBinary') . ' ' . ROOT . DS . 'bin' . DS . 'cake.php ' . $command);
     }
 
     public function run($command, array $parameters = [])
