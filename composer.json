@@ -3,7 +3,7 @@
     "description": "Cron Scheduler for CakePHP 3",
     "type": "cakephp-plugin",
     "require": {
-        "cakephp/cakephp": "~3.5",
+        "cakephp/cakephp": "^3.5",
         "lavary/crunz": "~2.0"
     },
     "require-dev": {
