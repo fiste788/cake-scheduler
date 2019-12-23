@@ -12,7 +12,9 @@ declare(strict_types=1);
 namespace CakeScheduler\Command;
 
 use Cake\Command\Command;
+use Cake\Console\Arguments;
 use Cake\Console\CommandInterface;
+use Cake\Console\ConsoleIo;
 use Cake\Console\ConsoleOptionParser;
 use Crunz\Application;
 use Symfony\Component\Console\Input\ArrayInput;
