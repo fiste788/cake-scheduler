@@ -12,23 +12,25 @@ declare(strict_types=1);
 namespace CakeScheduler\Schedule;
 
 use Cake\Core\Configure;
+use Crunz\Event;
 use Crunz\Schedule;
 
 class CakeSchedule extends Schedule
 {
-    public function shell($command)
+    public function shell(string $command): Event
     {
-        return $this->run(Configure::read('CakeScheduler.phpBinary') . ' ' . ROOT . DS . 'bin' . DS . 'cake.php ' . $command);
+        $binary = (string) Configure::read('CakeScheduler.phpBinary');
+        return $this->run($binary . ' ' . ROOT . DS . 'bin' . DS . 'cake.php ' . $command);
     }
 
-    public function run($command, array $parameters = [])
+    public function run(string $command, array $parameters = []): Event
     {
         $this->loadCakeBootstrapFile();
 
         return parent::run($command, $parameters);
     }
 
-    private function loadCakeBootstrapFile()
+    private function loadCakeBootstrapFile(): void
     {
         $root = $this->findRoot(__FILE__);
 
@@ -39,7 +41,7 @@ class CakeSchedule extends Schedule
         require_once $root . '/config/bootstrap.php';
     }
 
-    private function findRoot($root)
+    private function findRoot(string $root): string
     {
         do {
             $lastRoot = $root;
