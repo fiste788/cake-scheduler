@@ -23,7 +23,7 @@ class CakeSchedule extends Schedule
         return $this->run($binary . ' ' . ROOT . DS . 'bin' . DS . 'cake.php ' . $command);
     }
 
-    public function run(string $command, array $parameters = []): Event
+    public function run($command, array $parameters = []): Event
     {
         $this->loadCakeBootstrapFile();
 
