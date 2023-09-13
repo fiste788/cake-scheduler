@@ -14,7 +14,7 @@ declare(strict_types=1);
  * @since         2.0.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-namespace Authorization;
+namespace CakeScheduler;
 
 use CakeScheduler\Command as Commands;
 use Cake\Console\CommandCollection;
