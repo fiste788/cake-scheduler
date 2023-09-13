@@ -25,9 +25,8 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class ViewCommand extends Command
 {
-    public function getOptionParser(): ConsoleOptionParser
+    public function buildOptionParser(ConsoleOptionParser $parser): ConsoleOptionParser
     {
-        $parser = parent::getOptionParser();
 
         $parser->setDescription(
             'view',

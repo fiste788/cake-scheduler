@@ -25,10 +25,8 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class RunCommand extends Command
 {
-    public function getOptionParser(): ConsoleOptionParser
+    public function buildOptionParser(ConsoleOptionParser $parser): ConsoleOptionParser
     {
-        $parser = parent::getOptionParser();
-
         $parser->setDescription(
             __('Run the scheduler'),
         );
